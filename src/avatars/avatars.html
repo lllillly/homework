@@ -1,16 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avatars 과제</title>
-  <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
-  <link rel="icon" href="/src/assets/favicon/likelion.svg" />
-  <link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css">
-  <link rel="stylesheet" href="./styles/avatars.css" />
-</head>
-<body>
-  <!-- 여기에 마크업을 구성해 주세요. -->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatars 과제</title>
+    <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
+    <link rel="stylesheet" href="./styles/avatars.css" />
+  </head>
+  <body>
+    <h1>Avatars 과제</h1>
+
+    <div class="avatar-container" role="list" aria-label="사용자 아바타 목록">
+      <div class="avatar-box">
+        <div class="avatar graycircle" role="listitem" aria-label="아바타 1, 회색 상태">
+          <img src="/src/avatars/images/face1.jpg" alt="아바타 1" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar greencircle" role="listitem" aria-label="아바타 2, 초록색 상태">
+          <img src="/src/avatars/images/face2.jpg" alt="아바타 2" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar graycircle" role="listitem" aria-label="아바타 3, 회색 상태">
+          <img src="/src/avatars/images/face3.jpg" alt="아바타 3" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar greencircle" role="listitem" aria-label="아바타 4, 초록색 상태">
+          <img src="/src/avatars/images/face4.jpg" alt="아바타 4" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="avatar-box">
+        <div class="avatar greencircle" role="listitem" aria-label="아바타 5, 초록색 상태">
+          <img src="/src/avatars/images/face5.jpg" alt="아바타 5" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar greencircle" role="listitem" aria-label="아바타 6, 초록색 상태">
+          <img src="/src/avatars/images/face6.jpg" alt="아바타 6" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar graycircle" role="listitem" aria-label="아바타 7, 회색 상태">
+          <img src="/src/avatars/images/face7.jpg" alt="아바타 7" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+
+        <div class="avatar graycircle" role="listitem" aria-label="아바타 8, 회색 상태">
+          <img src="/src/avatars/images/face8.jpg" alt="아바타 8" />
+          <span class="circle" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,1 +1,198 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  --green: #03cf5d;
+  --focus: #24388d;
+  --border-gray: #dadada;
+  --error-bg: #e9f0fd;
+  --error-text: #ff0000;
+  --black: #121212;
+  --text-gray: #999999;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  color: var(--black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.login-container {
+  inline-size: 100%;
+  padding-inline: 1.25rem;
+
+  @media (min-width: 48rem) {
+    inline-size: 500px;
+  }
+}
+
+.logo {
+  inline-size: 230px;
+  margin-block-end: 1.875rem;
+  margin-inline: auto;
+  text-align: center;
+
+  & a:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 4px;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  .form-group {
+    margin-bottom: 0.625rem;
+    position: relative;
+
+    & input {
+      inline-size: 100%;
+      block-size: 2.8125rem;
+      padding-inline: 0.9375rem;
+
+      font-size: 0.875rem;
+      border: 1px solid var(--border-gray);
+      background-color: #fff;
+      outline: none;
+
+      &:focus {
+        border-color: var(--green);
+        background-color: var(--error-bg);
+      }
+
+      /* [검색] */
+      /* 가장 현대적이고 권장되는 방식은 :user-invalid를 사용하는 것이지만, 구형 브라우저 대응을 위해 :placeholder-shown을 활용한 꼼수(Trick)도 많이 사용됩니다. */
+      &:not(:placeholder-shown):invalid {
+        border-color: var(--error-text);
+
+        & + .err {
+          display: block;
+        }
+      }
+    }
+
+    .err {
+      display: none;
+      color: var(--error-text);
+      font-size: 0.75rem;
+      margin-block-start: 0.25rem;
+    }
+  }
+
+  .btn-login {
+    inline-size: 100%;
+    block-size: 2.8125rem;
+    margin-top: 1.25rem;
+
+    background: var(--green);
+    color: #fff;
+
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.login-options {
+  display: flex;
+  margin-block-start: 0.625rem;
+  justify-content: flex-end;
+
+  @media (min-width: 48rem) {
+    justify-content: space-between;
+  }
+
+  .keep-login {
+    display: flex;
+    align-items: center;
+
+    & label {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      cursor: pointer;
+      outline: none;
+
+      &::before {
+        content: '';
+        inline-size: 24px;
+        block-size: 24px;
+        margin-bottom: 5px;
+        background: url('../assets/profiles/unchecked.svg') no-repeat center;
+      }
+
+      &:focus {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+    }
+
+    & input:checked + label::before {
+      background-image: url('../assets/profiles/checked.svg');
+    }
+  }
+
+  .ip-security {
+    display: none;
+
+    @media (min-width: 48rem) {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .ip-title {
+      text-decoration: none;
+      color: inherit;
+      margin-inline-end: 5px;
+    }
+
+    .ip-switch {
+      cursor: pointer;
+      font-weight: bold;
+      outline: none;
+
+      &:focus {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      .on {
+        display: none;
+        color: var(--green);
+      }
+
+      .off {
+        color: var(--text-gray);
+      }
+    }
+
+    & input:checked + .ip-switch {
+      .on {
+        display: inline;
+      }
+      .off {
+        display: none;
+      }
+    }
+  }
+}
